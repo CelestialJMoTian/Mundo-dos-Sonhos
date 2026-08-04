@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Motor de Jogos - Mundo dos Sonhos</title>
+    <link rel="stylesheet" href="../css/jogo-quarto.css">
+    <script src="../js/banco-de-dados-jogos.js"></script>
+</head>
+<body>
+
+    <!-- ELEMENTO DE AUDIO DA MÚSICA MP3 -->
+    <audio id="musica-fundo" src="../musica/Barbie12princesas.mp3" loop preload="auto"></audio>
+
+    <!-- 1. TELA DE APRESENTAÇÃO -->
+    <div id="tela-apresentacao" class="tela-jogo-container">
+        <div class="tela-apresentacao">
+            <div class="capa-container">
+                <img id="apresentacao-capa" src="" alt="Capa do Jogo">
+            </div>
+            
+            <h1 id="apresentacao-titulo" class="titulo-jogo">Carregando...</h1>
+            <span class="genero-tag">Decoração & Magia</span>
+            
+            <p class="descricao-jogo">
+                Bem-vinda ao seu conto de fadas! Desperte sua magia interior e decore cada detalhe deste ambiente para torná-lo perfeito.
+            </p>
+
+            <div class="botoes-acao">
+                <button class="btn-secundario" title="Favoritar">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </button>
+                <button class="btn-secundario" title="Compartilhar">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                </button>
+            </div>
+
+            <button id="btn-iniciar-jogar" class="btn-jogar-grande">JOGAR</button>
+
+            <div class="secao-capturas">
+                <h3>Minhas Capturas</h3>
+                <div id="galeria-capturas" class="grid-capturas"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. MODAL DE ORIENTAÇÃO -->
+    <div id="modal-orientacao" class="modal-overlay escondido">
+        <div class="modal-caixa">
+            <h3>Como você prefere jogar?</h3>
+            <p style="font-size: 13px; margin-bottom: 20px; color: var(--texto-dim);">Escolha a posição do seu celular para começar a magia.</p>
+            <button class="btn-orientacao" id="btn-opt-vertical">Celular em Pé (Vertical)</button>
+            <button class="btn-orientacao" id="btn-opt-horizontal">Celular Deitado (Horizontal)</button>
+        </div>
+    </div>
+
+    <!-- 3. O JOGO EM SI (ENGINE) -->
+    <div id="motor-jogo" class="motor-jogo escondido">
+        
+        <!-- PALCO DAS CAMADAS -->
+        <div class="palco-cenario" id="palco-cenario">
+            <img id="camada-1" style="z-index: 10;" src="" class="escondido">
+            <img id="camada-2" style="z-index: 30;" src="" class="escondido">
+            <img id="camada-3" style="z-index: 20;" src="" class="escondido">
+            <img id="camada-4" style="z-index: 40;" src="" class="escondido">
+            <img id="camada-5" style="z-index: 50;" src="" class="escondido">
+            <img id="camada-6" style="z-index: 60;" src="" class="escondido">
+            <img id="camada-7" style="z-index: 70;" src="" class="escondido">
+            <img id="camada-8" style="z-index: 80;" src="" class="escondido">
+        </div>
+
+        <!-- MENU MÁGICO (FLUXO SEQUENCIAL) -->
+        <div class="menu-magico" id="menu-magico">
+            
+            <!-- Setas do Quadro Posicionadas no Topo do Menu Mágico -->
+            <div id="controles-quadro" class="controles-quadro escondido">
+                <img id="btn-quadro-cima" src="" alt="Cima">
+                <img id="btn-quadro-baixo" src="" alt="Baixo">
+            </div>
+
+            <img id="bg-menu-interativo" class="bg-menu" src="">
+            <div class="conteudo-menu">
+                
+                <div class="controles-superiores">
+                    <button class="btn-icone" id="btn-voltar-apresentacao">
+                        <img id="icone-voltar" src="" alt="Voltar">
+                    </button>
+                    <div id="titulo-etapa-atual" class="titulo-etapa">Cama & Quarto</div>
+                    <button class="btn-icone btn-pronto-destaque" id="btn-pronto">
+                        PRONTO
+                    </button>
+                </div>
+
+                <!-- Grade 2x2 de Itens -->
+                <div id="botoes-itens" class="grade-itens"></div>
+
+                <!-- Rodapé com Botões de Navegação Sequencial -->
+                <div class="rodape-navegacao">
+                    <button id="btn-etapa-anterior" class="btn-passo">Anterior</button>
+                    <button id="btn-etapa-proxima" class="btn-passo">Próximo</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. MODAL PARABÉNS -->
+    <div id="modal-parabens" class="modal-overlay escondido">
+        <div class="modal-caixa">
+            <h3>Parabéns, Alteza!
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="vertical-align: middle; margin-left: 8px;"><path d="M5 16h14l1-8-4 3-4-6-4 6-4-3 1 8zm-2 2h18v2H3v-2z"/></svg>
+            </h3>
+            <p style="font-size: 14px; margin-bottom: 20px;">Seu quarto ficou digno de um verdadeiro conto de fadas! Uma verdadeira obra de arte.</p>
+            <button class="btn-confirmar" id="btn-ver-arte">VER OBRA DE ARTE</button>
+        </div>
+    </div>
+
+    <!-- 5. TELA FINAL -->
+    <div id="tela-arte-final" class="tela-arte-final escondido">
+        <div class="imagem-final-container" id="container-canvas">
+            <canvas id="canvas-final"></canvas>
+        </div>
+        <div class="barra-inferior-final">
+            <button class="btn-secundario" id="btn-fechar-final" style="color: white; border-color: white; padding: 0;">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <button id="btn-baixar-imagem" class="btn-jogar-grande" style="margin-bottom: 0; padding: 10px 25px; font-size: 14px;">
+                BAIXAR IMAGEM
+            </button>
+        </div>
+    </div>
+
+    <script src="../js/jogo-quarto.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo dos Sonhos - Início</title>
+    <link rel="icon" type="image/png" href="arquivos/imagens/imagem-geral/favicon.png">
+    <link rel="stylesheet" href="arquivos/css/estilo.css">
+</head>
+<body>
+
+    <!-- Cabeçalho renderizado pelo JS -->
+    <div id="inserir-cabecalho"></div>
+
+    <main>
+        
+        <!-- =================== SEÇÃO 1: JOGOS =================== -->
+        <div id="secao-jogos" class="secao-conteudo ativa">
+            
+            <section id="secao-destaque">
+                <div class="moldura-barroca">
+                    <div class="ornamento-canto canto-tl"></div>
+                    <div class="ornamento-canto canto-tr"></div>
+                    <div class="ornamento-canto canto-bl"></div>
+                    <div class="ornamento-canto canto-br"></div>
+                    
+                    <div class="tag-destaque">
+                        <svg viewBox="0 0 24 24" width="12" height="12"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 
+                        DESTAQUE
+                    </div>
+                    <h2 id="destaque-titulo" class="fonte-serif">TÍTULO DO DESTAQUE AQUI</h2>
+                    <p id="destaque-descricao">Descrição curta sobre o conteúdo em destaque.</p>
+                    <button class="btn-rosa">LER AGORA ➔</button>
+                </div>
+            </section>
+
+            <section id="secao-categorias">
+                <button class="btn-categoria" id="op-1">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M21 9v4h-2V9h-2v4h-2V9h-2v4h-2V9H9v4H7V9H5v4H3V9H1v12h22V9h-2zm-3-4V1h-2v4h-2V3h-2v2h-2V3H8v2H6V3H4v2H2V1H0v6h24V1h-2v4zM12 18H8v-4h4v4z"/></svg>
+                    <span class="fonte-serif">OPÇÃO 1</span>
+                </button>
+                <button class="btn-categoria" id="op-2">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                    <span class="fonte-serif">OPÇÃO 2</span>
+                </button>
+                <button class="btn-categoria" id="op-3">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 10V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v5h2v2h2v-2h12v2h2v-2h2v-5c0-1.1-.9-2-2-2zm-14-3h12v3H6V7z"/></svg>
+                    <span class="fonte-serif">OPÇÃO 3</span>
+                </button>
+                <button class="btn-categoria" id="op-4">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C8.14 2 5 5.14 5 9c0 2.17 1 4.1 2.5 5.37V19c0 1.1.9 2 2 2h5c1.1 0 2-.9 2-2v-4.63C18 13.1 19 11.17 19 9c0-3.86-3.14-7-7-7z"/></svg>
+                    <span class="fonte-serif">OPÇÃO 4</span>
+                </button>
+                <button class="btn-categoria" id="op-5">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/></svg>
+                    <span class="fonte-serif">OPÇÃO 5</span>
+                </button>
+            </section>
+
+            <section id="secao-novos">
+                <div class="titulo-secao">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="#eb5598"><path d="M12 2L2 12l10 10 10-10L12 2z"/></svg>
+                    <h3 class="fonte-serif">NOVOS</h3>
+                    <span class="linha-dourada"></span>
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="#a45cd4" style="filter: drop-shadow(0 0 5px #ff85be);"><path d="M12 15c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm7.5-6.5C18.6 7.5 17.5 6 15 6c-2.3 0-3 1.2-3 1.2S11.3 6 9 6C6.5 6 5.4 7.5 4.5 8.5 3.1 10.1 3 11 3 13c0 2 1.5 4 4 4s2.5-1.5 4-2.5c0 0 .5-.5 1-1 .5.5 1 1 1 1 1.5 1 4 2.5 4 2.5s4-2 4-4c0-2-.1-2.9-1.5-4.5z"/></svg>
+                </div>
+                
+                <div id="lista-cards-novos">
+                    <!-- CARD DO JOGO QUARTO DE PRINCESA -->
+                    <a href="arquivos/html/jogo-quarto.html?jogo=quarto_de_princesa" style="text-decoration: none;">
+                        <div class="card-novo textura-quilt" style="background-color: #823053; background-image: url('arquivos/imagens/Quarto de princesa/capa.png'); background-size: cover; background-position: center;">
+                            <div class="gema-card" style="background: #ff9ee2; box-shadow: 0 0 8px #ff9ee2;"></div>
+                            <div class="card-overlay">
+                                <h4 class="fonte-serif">
+                                    <svg viewBox="0 0 24 24" width="10" height="10" fill="var(--dourado-claro)" style="margin-right: 2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    QUARTO DE PRINCESA
+                                </h4>
+                                <p>Decoração & Magia</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="card-novo textura-quilt" id="card-2">
+                        <div class="gema-card"></div>
+                        <div class="card-overlay">
+                            <h4 class="fonte-serif">
+                                <svg viewBox="0 0 24 24" width="10" height="10" fill="var(--dourado-claro)" style="margin-right: 2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                TÍTULO AQUI
+                            </h4>
+                            <p>Categoria</p>
+                        </div>
+                    </div>
+                    <div class="card-novo textura-quilt" id="card-3">
+                        <div class="gema-card"></div>
+                        <div class="card-overlay">
+                            <h4 class="fonte-serif">
+                                <svg viewBox="0 0 24 24" width="10" height="10" fill="var(--dourado-claro)" style="margin-right: 2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                TÍTULO AQUI
+                            </h4>
+                            <p>Categoria</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- =================== SEÇÃO 2: BIBLIOTECA =================== -->
+        <div id="secao-biblioteca" class="secao-conteudo">
+            
+            <h1 class="titulo-pagina-bib fonte-serif">BIBLIOTECA</h1>
+
+            <div class="busca-container">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <input type="text" placeholder="Pesquisar tradições, livros, símbolos...">
+            </div>
+
+            <button class="btn-filtros">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg>
+                <span>Filtros Avançados</span>
+            </button>
+
+            <div id="lista-cards-biblioteca">
+                <!-- CARD DO JOGO QUARTO DE PRINCESA -->
+                <a href="arquivos/html/jogo-quarto.html?jogo=quarto_de_princesa" style="text-decoration: none;">
+                    <div class="card-bib textura-quilt" style="background-color: #9e3b63; background-image: url('arquivos/imagens/Quarto de princesa/capa.png'); background-size: cover; background-position: center;">
+                        <div class="gema-card" style="background: #ff9ee2; box-shadow: 0 0 8px #ff9ee2;"></div>
+                        <div class="card-overlay">
+                            <h4 class="fonte-serif">
+                                <svg viewBox="0 0 24 24" width="10" height="10" fill="var(--dourado-claro)" style="margin-right: 2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                QUARTO DE PRINCESA
+                            </h4>
+                            <p>Decoração & Magia</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="card-bib textura-quilt" id="bib-card-2">
+                    <div class="gema-card"></div>
+                    <div class="card-overlay">
+                        <h4 class="fonte-serif">
+                            <svg viewBox="0 0 24 24" width="10" height="10" fill="var(--dourado-claro)" style="margin-right: 2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            TÍTULO AQUI
+                        </h4>
+                        <p>Categoria</p>
+                    </div>
+                </div>
+                <div class="card-bib textura-quilt" id="bib-card-3">
+                    <div class="gema-card"></div>
+                    <div class="card-overlay">
+                        <h4 class="fonte-serif">
+                            <svg viewBox="0 0 24 24" width="10" height="10" fill="var(--dourado-claro)" style="margin-right: 2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            TÍTULO AQUI
+                        </h4>
+                        <p>Categoria</p>
+                    </div>
+                </div>
+                <div class="card-bib textura-quilt" id="bib-card-4">
+                    <div class="gema-card"></div>
+                    <div class="card-overlay">
+                        <h4 class="fonte-serif">
+                            <svg viewBox="0 0 24 24" width="10" height="10" fill="var(--dourado-claro)" style="margin-right: 2px;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            TÍTULO AQUI
+                        </h4>
+                        <p>Categoria</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- =================== SEÇÃO 3: PERFIL =================== -->
+        <div id="secao-perfil" class="secao-conteudo">
+            <div id="perfil-conteudo-dinamico">
+                <div class="perfil-card-vazio">
+                    <div class="perfil-avatar-container">
+                        <svg viewBox="0 0 24 24" width="46" height="46" fill="var(--dourado-claro)"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <h2 class="fonte-serif perfil-titulo">Seja Bem-vindo(a)</h2>
+                    <p class="perfil-descricao">Você ainda não possui um perfil local. Crie agora para personalizar sua experiência, salvar seu histórico e muito mais!</p>
+                    <button class="btn-rosa btn-criar-perfil" id="btn-criar-perfil">Criar Meu Perfil Local</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- =================== MODAL DE PERFIL =================== -->
+    <div class="modal-overlay" id="modal-perfil">
+        <div class="modal-perfil">
+            <div class="modal-topo">
+                <h3 class="fonte-serif">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    Meu Perfil Local
+                </h3>
+                <button class="modal-fechar" id="modal-fechar">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+
+            <div class="modal-aviso">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align: text-bottom; margin-right: 2px;"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                <strong>Atenção:</strong> Sua conta é salva na memória do navegador. Se você limpar os dados ou o cache do app, perderá este perfil!
+            </div>
+
+            <div class="modal-grupo">
+                <label>Escolha uma foto de perfil:</label>
+                <div class="grid-avatares">
+                    <div class="avatar-opcao selecionado" data-avatar="arquivos/imagens/imagem-geral/perfil1.png">
+                        <img src="arquivos/imagens/imagem-geral/perfil1.png" alt="Perfil 1">
+                    </div>
+                    <div class="avatar-opcao" data-avatar="arquivos/imagens/imagem-geral/perfil2.png">
+                        <img src="arquivos/imagens/imagem-geral/perfil2.png" alt="Perfil 2">
+                    </div>
+                    <div class="avatar-opcao" data-avatar="arquivos/imagens/imagem-geral/perfil3.png">
+                        <img src="arquivos/imagens/imagem-geral/perfil3.png" alt="Perfil 3">
+                    </div>
+                    <div class="avatar-opcao" data-avatar="arquivos/imagens/imagem-geral/perfil4.png">
+                        <img src="arquivos/imagens/imagem-geral/perfil4.png" alt="Perfil 4">
+                    </div>
+                    <div class="avatar-opcao" data-avatar="arquivos/imagens/imagem-geral/perfil5.png">
+                        <img src="arquivos/imagens/imagem-geral/perfil5.png" alt="Perfil 5">
+                    </div>
+                    <div class="avatar-opcao" data-avatar="arquivos/imagens/imagem-geral/perfil6.png">
+                        <img src="arquivos/imagens/imagem-geral/perfil6.png" alt="Perfil 6">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-grupo">
+                <label for="input-apelido">Apelido (Princesa/Príncipe) (Muda a cada 7 dias):</label>
+                <input type="text" id="input-apelido" class="modal-input" placeholder="Digite seu apelido...">
+            </div>
+
+            <div class="modal-grupo">
+                <label>Princesa Favorita (Muda a cada 7 dias):</label>
+                <div class="modal-input custom-select" id="trigger-princesa">
+                    <span id="texto-princesa">Selecione...</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                </div>
+                <input type="hidden" id="select-princesa" value="">
+            </div>
+
+            <div class="modal-grupo">
+                <label>Gênero:</label>
+                <div class="modal-input custom-select" id="trigger-genero">
+                    <span id="texto-genero">Selecione...</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                </div>
+                <input type="hidden" id="select-genero" value="">
+            </div>
+
+            <div class="modal-grupo" id="grupo-outro-genero" style="display: none;">
+                <label for="input-outro-genero">Especifique sua identidade / sexualidade:</label>
+                <input type="text" id="input-outro-genero" class="modal-input" placeholder="Digite aqui...">
+            </div>
+
+            <button class="modal-btn-salvar" id="btn-salvar-perfil">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="vertical-align: middle; margin-right: 5px;"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/></svg>
+                Salvar Perfil
+            </button>
+        </div>
+    </div>
+
+    <!-- =================== MODAL DE OPÇÕES MAGICO (CUSTOM SELECT) =================== -->
+    <div class="modal-overlay" id="modal-opcoes">
+        <div class="modal-perfil" style="max-height: 70vh; max-width: 350px;">
+            <div class="modal-topo">
+                <h3 class="fonte-serif" id="titulo-modal-opcoes">Selecione</h3>
+                <button class="modal-fechar" id="btn-fechar-opcoes">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="lista-opcoes-container" id="lista-opcoes-dinamica">
+                <!-- Preenchido pelo JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== MODAL DE MENSAGENS E ALERTAS MÁGICOS =================== -->
+    <div class="modal-overlay" id="modal-mensagem">
+        <div class="modal-mensagem-caixa">
+            <div id="icone-mensagem" style="margin-bottom: 15px; color: var(--dourado-claro);">
+                <!-- Ícone trocado dinamicamente no JS -->
+            </div>
+            <p class="modal-mensagem-texto" id="texto-mensagem"></p>
+            <div class="botoes-mensagem" id="botoes-mensagem">
+                <!-- Botões gerados pelo JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé renderizado pelo JS -->
+    <div id="inserir-rodape"></div>
+
+    <script src="arquivos/js/app.js"></script>
+    <script src="arquivos/js/perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+body { margin: 0; padding: 0; background-color: #f5d0dc; font-family: 'Lato', sans-serif; overflow: hidden; }
+.escondido { display: none !important; }
+
+/* TELAS */
+.tela-jogo-container { width: 100vw; height: 100vh; display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden; }
+.tela-apresentacao { padding: 20px; text-align: center; color: #5c2338; padding-bottom: 50px; }
+.capa-container img { width: 100%; max-width: 350px; border-radius: 12px; border: 2px solid #cfa05d; box-shadow: 0 8px 20px rgba(92,35,56,0.3); }
+.titulo-jogo { font-family: 'Playfair Display', serif; font-size: 28px; margin: 15px 0 5px; color: #8f2a53; }
+.genero-tag { background: #eb5598; color: white; padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: bold; }
+.descricao-jogo { font-size: 14px; margin: 15px 0; line-height: 1.5; }
+
+/* BOTÕES APRESENTAÇÃO */
+.botoes-acao { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.btn-secundario { background: transparent; border: 1.5px solid #cfa05d; color: #8f2a53; padding: 10px; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+.btn-jogar-grande { background: linear-gradient(90deg, #d33c82, #ff6ba9, #d33c82); border: 2px solid #fde8a9; color: white; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: bold; padding: 15px 40px; border-radius: 30px; box-shadow: 0 0 20px rgba(234,80,147,0.5); cursor: pointer; margin-bottom: 30px; }
+
+/* GALERIA DE CAPTURAS */
+.secao-capturas { border-top: 1px solid rgba(207,160,93,0.5); padding-top: 20px; text-align: left; }
+.secao-capturas h3 { font-family: 'Playfair Display', serif; color: #8f2a53; margin-bottom: 10px; }
+.grid-capturas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.captura-item { width: 100%; aspect-ratio: 1.5; border-radius: 8px; border: 1.5px solid #cfa05d; object-fit: cover; background: #3d1725; }
+
+/* MODAIS */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(61, 23, 37, 0.85); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 9999; }
+.modal-overlay.ativo { display: flex; }
+.modal-caixa { background: linear-gradient(135deg, #5c2438 0%, #3d1725 100%); border: 2px solid #cfa05d; border-radius: 16px; padding: 25px; text-align: center; color: #fdf5eb; width: 85%; max-width: 350px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
+.modal-caixa h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: #fde8a9; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-orientacao { width: 100%; background: rgba(0,0,0,0.2); border: 1px solid #cfa05d; color: white; padding: 15px; border-radius: 12px; margin-bottom: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+.btn-orientacao:hover { background: rgba(207,160,93,0.3); }
+.btn-confirmar { background: linear-gradient(90deg, #d33c82, #ff6ba9); border: none; color: white; padding: 12px 30px; border-radius: 20px; font-weight: bold; cursor: pointer; margin-top: 15px; }
+
+/* ENGINE DO JOGO */
+.motor-jogo { display: flex; width: 100vw; height: 100vh; background: #000; overflow: hidden; position: relative; }
+
+/* PALCO */
+.palco-cenario { position: relative; overflow: hidden; background: #000; display: flex; justify-content: center; align-items: center; }
+.palco-cenario img { position: absolute; width: 100%; height: 100%; object-fit: contain; top: 0; left: 0; pointer-events: none; transition: transform 0.1s ease-out; }
+
+/* MENU MÁGICO */
+.menu-magico { position: relative; display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+.bg-menu { position: absolute; width: 100%; height: 100%; object-fit: fill; z-index: 1; top: 0; left: 0; pointer-events: none; }
+.conteudo-menu { position: relative; z-index: 2; width: 100%; height: 100%; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; }
+
+/* TÍTULO DA ETAPA ATUAL */
+.titulo-etapa { font-family: 'Playfair Display', serif; color: #5c2338; font-size: 18px; text-align: center; font-weight: bold; margin: 5px 0; text-shadow: 0 1px 2px rgba(255,255,255,0.6); }
+
+/* GRADE DE 2x2 COM BOTÕES MAIORES */
+.grade-itens { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; justify-items: center; align-items: center; width: 100%; max-height: 210px; overflow-y: auto; padding: 5px; box-sizing: border-box; }
+.grade-itens::-webkit-scrollbar { width: 6px; }
+.grade-itens::-webkit-scrollbar-thumb { background: #cfa05d; border-radius: 10px; }
+
+.btn-img-jogo { width: 95px; height: 95px; min-width: 95px; border: 3px solid #cfa05d; border-radius: 16px; cursor: pointer; object-fit: cover; background: rgba(255,255,255,0.3); box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.1s; }
+.btn-img-jogo:active { transform: scale(0.92); }
+
+/* BOTÃO PRONTO BEM VISÍVEL E DESTAQUE */
+.btn-pronto-destaque { background: linear-gradient(90deg, #ff2a88, #ff6ba9) !important; padding: 8px 18px !important; border-radius: 20px !important; color: #fff !important; font-weight: bold !important; font-size: 13px !important; border: 2px solid #fff !important; cursor: pointer; box-shadow: 0 4px 12px rgba(255,42,136,0.6); }
+
+/* NAVEGAÇÃO INFERIOR (ANTERIOR / PRÓXIMO) */
+.rodape-navegacao { display: flex; justify-content: space-between; width: 100%; padding: 5px 10px; z-index: 5; box-sizing: border-box; }
+.btn-passo { background: linear-gradient(90deg, #d33c82, #ff6ba9); border: 2px solid #fde8a9; color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+.btn-passo:active { transform: scale(0.95); }
+
+/* CONTROLES SUPERIORES */
+.controles-superiores { display: flex; justify-content: space-between; align-items: center; width: 100%; z-index: 5; }
+.btn-icone { background: transparent; border: none; cursor: pointer; }
+.btn-icone img { width: 35px; height: 35px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+
+/* CONTROLES DO QUADRO (SETAS) */
+.controles-quadro { display: flex; flex-direction: row; gap: 15px; position: absolute; top: -25px; left: 50%; transform: translateX(-50%); z-index: 100; background: rgba(92, 35, 56, 0.85); padding: 4px 12px; border-radius: 20px; border: 1.5px solid #cfa05d; backdrop-filter: blur(4px); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+.controles-quadro img { width: 32px; height: 32px; cursor: pointer; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8)); background: rgba(255,255,255,0.2); border-radius: 50%; padding: 3px; border: 1px solid #cfa05d; }
+
+/* MODO VERTICAL */
+.motor-jogo.layout-vertical { flex-direction: column; }
+.motor-jogo.layout-vertical .palco-cenario { width: 100vw; height: 42vh; }
+.motor-jogo.layout-vertical .menu-magico { width: 100vw; height: 58vh; }
+
+/* MODO HORIZONTAL */
+.motor-jogo.layout-horizontal { flex-direction: row; }
+.motor-jogo.layout-horizontal .palco-cenario { width: 65vw; height: 100vh; }
+.motor-jogo.layout-horizontal .menu-magico { width: 35vw; height: 100vh; }
+
+/* TELA FINAL */
+.tela-arte-final { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 50; display: flex; flex-direction: column; background: #000; }
+.tela-arte-final .imagem-final-container { flex-grow: 1; position: relative; display: flex; justify-content: center; align-items: center; }
+.tela-arte-final canvas { max-width: 100%; max-height: 100%; object-fit: contain; }
+.barra-inferior-final { height: 80px; background: #3d1725; display: flex; justify-content: space-around; align-items: center; border-top: 2px solid #cfa05d; padding: 0 20px; }
